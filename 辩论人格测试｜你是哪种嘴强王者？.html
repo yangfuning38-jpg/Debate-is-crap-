@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>辩论人格测试｜你是哪种嘴强王者？</title>
+<style>
+:root{--bg:#dde2e1;--ink:#4a4f57;--sub:#7b828b;--card:#f3efec;--yellow:#ffe27a;--yellow2:#f6d24f;--sage:#aebcaf;--rose:#d9b8b4;--blue:#a9b8c6;--mauve:#bcaec0;--line:#c9cfce;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2f3436;--ink:#ebe8e4;--sub:#a9b0b2;--card:#3d4345;--line:#505759;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#2f3436;--ink:#ebe8e4;--sub:#a9b0b2;--card:#3d4345;--line:#505759;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.6;min-height:100vh}
+.wrap{max-width:460px;margin:0 auto;padding:22px 18px 40px}
+.card{background:var(--card);border-radius:28px;padding:24px 20px;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--yellow2)}
+h1{font-size:30px;line-height:1.25;margin:10px 0 8px;letter-spacing:1px}
+h1 span{background:var(--yellow);color:#4a4f57;padding:0 8px;border-radius:12px;display:inline-block;transform:rotate(-2deg)}
+p{margin:6px 0}.sub{color:var(--sub);font-size:14px}
+.btn{display:block;width:100%;border:3px solid var(--ink);background:var(--yellow);color:#4a4f57;font:inherit;font-weight:700;font-size:17px;padding:13px 16px;border-radius:999px;cursor:pointer;box-shadow:0 5px 0 var(--ink);transition:transform .08s,box-shadow .08s;margin-top:16px}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--ink)}
+.btn.alt{background:var(--sage)}
+.btn:focus-visible,.opt:focus-visible{outline:3px dashed var(--ink);outline-offset:3px}
+.mascot{width:120px;height:104px;margin:6px auto 0;background:var(--yellow);border:3px solid var(--ink);border-radius:50% 50% 46% 46%;position:relative;animation:hop 1.6s ease-in-out infinite}
+.mascot i{position:absolute;top:38px;width:11px;height:14px;background:var(--ink);border-radius:50%}
+.mascot i.l{left:34px}.mascot i.r{right:34px}
+.mascot b{position:absolute;left:50%;bottom:20px;width:26px;height:14px;margin-left:-13px;background:#a9747a;border:3px solid var(--ink);border-radius:4px 4px 16px 16px}
+.mascot em{position:absolute;top:56px;width:16px;height:9px;background:var(--rose);border-radius:50%}
+.mascot em.l{left:16px}.mascot em.r{right:16px}
+.mascot u{position:absolute;right:-22px;bottom:2px;width:12px;height:34px;background:var(--blue);border:3px solid var(--ink);border-radius:8px;transform:rotate(25deg)}
+@keyframes hop{0%,100%{transform:translateY(0) scale(1,1)}45%{transform:translateY(-14px) scale(.97,1.04)}60%{transform:translateY(0) scale(1.05,.95)}}
+@media (prefers-reduced-motion:reduce){.mascot{animation:none}}
+.tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+.tags span{background:var(--blue);color:#3f454d;border-radius:999px;padding:3px 12px;font-size:13px;border:2px solid var(--ink)}
+.tags span:nth-child(2){background:var(--rose)}.tags span:nth-child(3){background:var(--sage)}
+.bar{height:16px;border:3px solid var(--ink);border-radius:999px;background:var(--card);overflow:hidden}
+.bar div{height:100%;background:var(--yellow2);width:0;transition:width .3s}
+.meta{display:flex;justify-content:space-between;font-size:14px;margin:6px 4px 14px;color:var(--sub)}
+.q{font-size:20px;font-weight:700;margin:6px 0 16px;line-height:1.5}
+.part{display:inline-block;background:var(--mauve);color:#3f454d;border-radius:12px;padding:1px 10px;font-size:13px;border:2px solid var(--ink)}
+.opt{display:block;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--bg);border:3px solid var(--ink);border-radius:20px;padding:13px 15px;margin-bottom:12px;cursor:pointer;transition:background .1s}
+.opt:hover{background:var(--yellow);color:#4a4f57}
+.opt.pick{background:var(--yellow);color:#4a4f57}
+.back{background:none;border:0;color:var(--sub);font:inherit;text-decoration:underline;cursor:pointer;margin-top:4px;padding:6px}
+.rhead{text-align:center;border-radius:22px;padding:18px 10px;border:3px solid var(--ink);margin-bottom:14px}
+.emo{font-size:60px;line-height:1.1}
+.code{font-weight:800;letter-spacing:4px;font-size:15px;margin-top:4px}
+.rname{font-size:28px;font-weight:800;margin:2px 0}
+.quote{font-style:italic;font-size:15px;margin-top:6px}
+.sec{background:var(--bg);border:2px dashed var(--ink);border-radius:18px;padding:10px 14px;margin-top:10px}
+.sec h3{margin:0 0 2px;font-size:15px}
+.sec p{margin:0;font-size:14.5px}
+.roast{background:var(--yellow);color:#4a4f57;border-style:solid}
+.hide{display:none}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 18px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<section id="s0" class="card" style="text-align:center">
+  <div class="mascot"><i class="l"></i><i class="r"></i><em class="l"></em><em class="r"></em><b></b><u></u></div>
+  <h1>辩论人格测试<br><span>你是哪种嘴强王者？</span></h1>
+  <p class="sub">21 道题 · 4 分钟 · 8 种辩论人格<br>测完你就知道，队友到底该怎么忍你。</p>
+  <div class="tags"><span>逻辑 or 价值</span><span>进攻 or 防守</span><span>体系 or 应变</span></div>
+  <button class="btn" id="go">开始开麦 🎤</button>
+</section>
+
+<section id="s1" class="hide">
+  <div class="meta"><span id="pt"></span><span id="cnt"></span></div>
+  <div class="bar"><div id="fill"></div></div>
+  <div class="card" style="margin-top:16px">
+    <span class="part" id="part"></span>
+    <p class="q" id="q"></p>
+    <div id="opts"></div>
+    <button class="back" id="bk">← 上一题（后悔药）</button>
+  </div>
+</section>
+
+<section id="s2" class="hide">
+  <div class="card">
+    <div class="rhead" id="rh">
+      <div class="emo" id="emo"></div>
+      <div class="code" id="code"></div>
+      <div class="rname" id="rn"></div>
+      <div class="quote" id="qt"></div>
+    </div>
+    <div class="sec"><h3>🎬 你的画像</h3><p id="pic"></p></div>
+    <div class="sec roast"><h3>🤡 队友私下吐槽</h3><p id="roast"></p></div>
+    <div class="sec"><h3>💪 高光时刻</h3><p id="str"></p></div>
+    <div class="sec"><h3>🕳️ 翻车预警</h3><p id="weak"></p></div>
+    <div class="sec"><h3>🪑 最适合的辩位</h3><p id="pos"></p></div>
+    <div class="sec"><h3>🧩 最佳搭档</h3><p id="mate"></p></div>
+    <div class="sec"><h3>🏋️ 练习小贴士</h3><p id="tip"></p></div>
+    <button class="btn" id="share">复制结果，去群里炫耀</button>
+    <button class="btn alt" id="again">再测一次（换个人格）</button>
+  </div>
+</section>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+var Q=[
+["拿到新辩题，你的第一反应是？","L|先拆概念、定标准，搭逻辑链","V|先想背后的价值冲突，它触动了谁","L|先把正反双方最强的论点都列出来比一比"],
+["哪个论点最让你得意？","L|环环相扣，找不到漏洞","V|一句话出口，台下有人点头","V|一个小故事，让评委眼眶一热","L|数据一摆，对面哑口无言"],
+["队友备赛不认真，你会怎么办？","L|把后果摆出来：“现在不准备，上场会输在哪”","V|找他聊聊，让他感受到这场比赛对大家意味着什么","V|自己多扛一点，用行动带动他"],
+["对方甩出一组漂亮数据，你会？","L|先查口径，看数据到结论推不推得出","V|指出数据背后被忽略的人和处境"],
+["赛后评委哪句点评最让你开心？","V|“你们的陈词很有感染力和高度”","L|“你们的逻辑链条非常清晰”","L|“每个论点都有扎实的论证”"],
+["队友发来新稿子，你先看？","L|有没有逻辑漏洞或偷换概念","V|有没有能打动人的点和升华"],
+["最让你上头的辩题是？","L|概念定义很绕、可以疯狂拆解的","V|直戳人心、关乎“人该怎么活”的","V|能让我光明正大讲大道理的"],
+["赛前抽环节，你更想要？","D|守住己方立论，当稳稳的后盾","A|质询或攻辩，主动出击","A|自由辩论，抢麦开战"],
+["对方抛来一个尖锐问题，你的本能是？","A|反手抛一个更尖锐的","D|先稳住，把问题拉回己方框架里答","D|先笑一下，拖点时间想想"],
+["比分落后了，你会？","D|先止损补漏洞，再找机会反击","A|加大攻势，赌一波反超","A|不慌，我还有压箱底的大招","D|看看队友需不需要我救场"],
+["自由辩论时，你通常？","A|抢第一个发言权，带节奏","D|先听清对面，再精准回应"],
+["你理想中的胜利是？","D|对方始终攻不进来，评委觉得我们更稳","A|把对方核心论点打穿","A|全场气势都压着对面打"],
+["小组赛抽到强队，你的心态是？","A|正好，主动找机会咬他们一口","D|稳住阵脚，别让对面轻易拿分"],
+["对方一辩陈词很强，你的第一想法是？","D|想好怎么把己方立场讲得更稳固","A|记下破绽，准备在质询里拆","D|先在心里给他鼓个掌，再冷静应对"],
+["赛前准备，你更像？","S|做完整攻防预案表，把对方论点列全","F|列几个核心要点，留空间给临场","F|看心情，灵感来了再说"],
+["场上对方突然抛出没预案的论点？","S|有点不安，努力拉回预设框架","F|有点兴奋，现场组织新回应","S|悄悄翻预案本，找最接近的一条","F|不慌，直接即兴硬接"],
+["你写稿子的习惯是？","F|写提纲就够了，细节交给现场","S|逐字稿反复打磨，连停顿都设计好"],
+["比赛前一周，你的状态？","S|早早定稿，剩下几天反复演练","F|前期散着准备，比赛前夜灵感最足","F|前一周先忙别的，最后一晚咖啡续命"],
+["在队伍里你更愿意当？","S|制定战术框架和分工的人","F|场上随机应变、补位的人"],
+["赛前你的电脑文件夹更像？","F|一堆“新建文档(3)”，但我知道在哪","S|分门别类，命名规范，版本齐全"],
+["突然被通知临时换辩位，你会？","F|行，上场再说，边打边调整","S|先找队友把这个位置的任务清单对一遍","S|先要资料和框架，补齐了才安心"]
+];
+var R={
+LAS:{e:"🏛️",n:"立论建筑师",c:"#a9b8c6",qt:"先把地基打好，剩下的就是盖楼。",pic:"天生的一辩和队内“总工程师”，擅长搭逻辑完整、层次分明的立论框架，再用它主动压制对方。",roast:"一份预案做得比毕业论文还长，还要求大家背熟。",str:"结构感极强，论证严密，队友跟着你的框架打比赛心里踏实。",weak:"框架被打乱时容易僵住，有时重建筑、轻感染。",pos:"一辩、队内战术总负责人",mate:"VDF 场域读心者：你搭楼，他负责看风向。",tip:"多做无预案自由辩模拟，练习“拆了楼也能临时搭棚子”。"},
+LAF:{e:"🗡️",n:"质询刀锋",c:"#d9b8b4",qt:"你的每个回答，都是我下一个问题的伏笔。",pic:"质询和攻辩环节的“手术刀”，反应极快，一个小小的逻辑裂缝就能被你追问到崩盘。",roast:"对面一紧张你就微笑，我们都替对面捏把汗。",str:"临场嗅觉敏锐，节奏感强，对方越慌你越兴奋。",weak:"容易只顾打人忽略己方立论，备战随性，偶尔后劲不足。",pos:"二辩、三辩（质询、攻辩）",mate:"VDS 定海针：你负责冲锋，他负责兜底。",tip:"每次质询前定一个“必须拿下的目标”，别为了漂亮而追问。"},
+LDS:{e:"🛡️",n:"铁壁守门人",c:"#aebcaf",qt:"你可以进攻，但每一步我都算过。",pic:"防线的建造者，预案做得极其周全，对方每次攻击你几乎都有标准答案。",roast:"问他任何问题，都会听到一句：“这个我们预案里有。”",str:"稳定可靠，是队伍最不容易崩的一环。",weak:"过于保守容易被动挨打，遇到全新打法会犹豫。",pos:"二辩防守、资料与预案负责人",mate:"VAF 气场点火者：你守得稳，他才敢放心点火。",tip:"预案之外再设一条“反击线”，防守后至少回敬一个有力反问。"},
+LDF:{e:"💣",n:"反驳拆弹手",c:"#bcaec0",qt:"你以为是炸弹，其实是我的靶子。",pic:"对方猛攻时你冷静拆解，还能把对手最强的论点顺势变成己方论据。",roast:"前半场像睡着了，后半场突然开挂，我们都习惯了。",str:"临场冷静抗压强，擅长以彼之道还施彼身。",weak:"前期容易沉默被动，节奏常由对方来定。",pos:"三辩、小结、自由辩“接招者”",mate:"VAS 价值布道者：他定调，你拆弹。",tip:"训练“先发制人”的第一击，让自己也有定调的机会。"},
+VAS:{e:"🔥",n:"价值布道者",c:"#f6d24f",qt:"我不是在赢一场比赛，我是在说服一个世界观。",pic:"结辩型选手，擅长提炼价值、构建宏大叙事，让整场比赛的意义落在你这一边。",roast:"三分钟结辩，两分半在拯救世界，剩下半分钟在感谢评委。",str:"站位高，陈词感染力强，擅长把胜负落到价值判断上。",weak:"容易“飘”，被对方抓住细节漏洞，偶尔显得说教。",pos:"一辩陈词、结辩",mate:"LDF 反驳拆弹手：你在天上飞，他在地上补漏。",tip:"给每个价值判断配一个具体论证或例子，让高度落地。"},
+VAF:{e:"⚡",n:"气场点火者",c:"#e9c9a7",qt:"辩论是一场表演，而我是主角。",pic:"自由辩的“开场王”，极具临场表现力，一句话点燃全场，带动队友节奏。",roast:"上场前说“我没怎么准备”，然后全场就他最亮。",str:"气场强感染力足，关键时刻能扭转气势。",weak:"准备不够系统，容易靠状态吃饭，情绪上头时逻辑松动。",pos:"自由辩论核心、结辩",mate:"LDS 铁壁守门人：你点火，他灭火兼备份。",tip:"把“灵感句”沉淀成可复用的素材库，让发挥更稳定。"},
+VDS:{e:"⚓",n:"定海针",c:"#b5c7c2",qt:"队伍乱的时候，我是那个把大家拉回主线的人。",pic:"团队稳定器，重视整体配合，守住己方价值立场，统筹全队叙事一致。",roast:"队里的“妈妈”，赛前负责买水、定闹钟、安抚情绪。",str:"全局观好，沟通力强，是队友信赖的精神支柱。",weak:"不够锋芒外露，关键时刻容易让出主动权。",pos:"队长、四辩总结、赛前协调",mate:"LAF 质询刀锋：他负责出刀，你负责擦刀。",tip:"给自己设一个进攻任务，每场至少主动发起一次强有力的质疑。"},
+VDF:{e:"🌊",n:"场域读心者",c:"#c9bfd0",qt:"我在辩论，也在读空气：对手、观众、评委。",pic:"对场上氛围和评委偏好极度敏感，擅长根据现场反馈调整表达和重点。",roast:"评委皱一下眉，他已经改了三版说法。",str:"共情力强适应性高，善于在“软环境”里争取评委认同。",weak:"容易被场上节奏牵着走，缺少自己的主线。",pos:"四辩、结辩、适应力要求高的比赛",mate:"LAS 立论建筑师：他给你框架，你给他温度。",tip:"赛前先定一条“不管发生什么都不丢”的核心主线。"}
+};
+var ans=[],i=0;
+var $=function(id){return document.getElementById(id)};
+function show(n){["s0","s1","s2"].forEach(function(s,k){$(s).classList.toggle("hide",k!==n)});window.scrollTo(0,0)}
+function render(){
+  var q=Q[i],p=q[1].charAt(0);
+  var pt="LV".indexOf(p)>=0?"思维取向":"AD".indexOf(p)>=0?"战场风格":"备战方式";
+  $("part").textContent=pt;$("q").textContent=(i+1)+". "+q[0];
+  $("pt").textContent=pt;$("cnt").textContent=(i+1)+" / 21";
+  $("fill").style.width=(i/21*100)+"%";
+  var box=$("opts");box.innerHTML="";
+  for(var k=1;k<q.length;k++){(function(k){
+    var b=document.createElement("button");b.className="opt"+(ans[i]===k?" pick":"");
+    b.textContent="ABCD".charAt(k-1)+"　"+q[k].slice(2);
+    b.onclick=function(){pick(k)};box.appendChild(b)})(k)}
+  $("bk").style.visibility=i?"visible":"hidden";
+}
+function pick(v){
+  ans[i]=v;
+  if(i<20){i++;render()}else{finish()}
+}
+function finish(){
+  var dims=[["L","V"],["A","D"],["S","F"]],code="";
+  for(var d=0;d<3;d++){
+    var a=0;for(var k=0;k<7;k++){if(ans[d*7+k]==="A")a++}
+    code+=a>=4?dims[d][0]:dims[d][1];
+  }
+  var r=R[code];
+  $("rh").style.background=r.c;$("rh").style.color="#3f454d";
+  $("emo").textContent=r.e;$("code").textContent=code;$("rn").textContent=r.n;$("qt").textContent="“"+r.qt+"”";
+  $("pic").textContent=r.pic;$("roast").textContent=r.roast;$("str").textContent=r.str;
+  $("weak").textContent=r.weak;$("pos").textContent=r.pos;$("mate").textContent=r.mate;$("tip").textContent=r.tip;
+  window.__txt="我的辩论人格是【"+code+"｜"+r.n+"】"+r.e+"\n“"+r.qt+"”\n队友吐槽：“"+r.roast+"”\n来测测你是哪种嘴强王者？";
+  show(2);
+}
+$("go").onclick=function(){ans=[];i=0;render();show(1)};
+$("bk").onclick=function(){if(i>0){i--;render()}};
+$("again").onclick=function(){ans=[];i=0;show(0)};
+function toast(t){var e=$("toast");e.textContent=t;e.classList.add("on");setTimeout(function(){e.classList.remove("on")},1800)}
+$("share").onclick=function(){
+  try{navigator.clipboard.writeText(window.__txt).then(function(){toast("已复制，去群里发吧 ✨")},function(){toast("复制失败，截图分享也行 📸")})}
+  catch(e){toast("复制失败，截图分享也行 📸")}
+};
+</script>
+</body>
+</html>
